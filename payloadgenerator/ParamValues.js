@@ -2,6 +2,8 @@ var extHist = org.parosproxy.paros.control.Control.getSingleton().
     				getExtensionLoader().getExtension(
         				org.zaproxy.zap.extension.params.ExtensionParams.NAME);
 
+// TODO : Support form and headers params
+// TODO : Get site associated with active context
 var values = extHist.getSiteParameters("localhost:8080").getParam(org.parosproxy.paros.network.HtmlParameter.Type.url, "Screen").getValues().toArray();
 
 
@@ -9,7 +11,6 @@ var values = extHist.getSiteParameters("localhost:8080").getParam(org.parosproxy
 var NUMBER_OF_PAYLOADS = values.length;
 var INITIAL_VALUE = 0;
 var count = INITIAL_VALUE;
-
 
 // The number of generated payloads, zero to indicate unknown number.
 // The number is used as a hint for progress calculations.
